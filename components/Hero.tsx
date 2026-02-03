@@ -10,11 +10,11 @@ export function Hero() {
 
             {/* Animated Background (User Provided) */}
             <GradientBars
-                numBars={5}
+                numBars={10}
                 gradientFrom="#00FF94" // Green
                 gradientTo="transparent"
-                animationDuration={3}
-                className="opacity-60 mix-blend-screen pointer-events-none"
+                animationDuration={1.5}
+                className="opacity-50 mix-blend-screen pointer-events-none"
             />
 
             {/* Fallback ambient glow for extra depth */}
