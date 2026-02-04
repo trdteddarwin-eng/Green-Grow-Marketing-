@@ -2,6 +2,8 @@ import { Hero } from "@/components/Hero";
 import { Ticker } from "@/components/Ticker";
 import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
+import { ClientTestimonials } from "@/components/ClientTestimonials";
+import { LetsWorkTogether } from "@/components/LetsWorkTogether";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -11,6 +13,8 @@ export default function Home() {
       <Ticker />
       <Services />
       <Testimonials />
+      <ClientTestimonials />
+      <LetsWorkTogether />
       <Footer />
     </main>
   );
