@@ -184,11 +184,11 @@ export function FAQ() {
 
         {/* Accordion */}
         <motion.div
+          key={activeCategory}
           className="flex flex-col gap-3"
           variants={staggerContainer}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+          animate="show"
         >
           {filtered.map((item, i) => (
             <motion.div key={`${activeCategory}-${i}`} variants={fadeUp}>

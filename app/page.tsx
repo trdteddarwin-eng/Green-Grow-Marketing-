@@ -1,23 +1,21 @@
 import { Hero } from "@/components/Hero";
-import { Ticker } from "@/components/Ticker";
+import { LogoBar } from "@/components/LogoBar";
 import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
 import { ClientTestimonials } from "@/components/ClientTestimonials";
-import { FAQ } from "@/components/FAQ";
 import { LetsWorkTogether } from "@/components/LetsWorkTogether";
-import { Footer } from "@/components/Footer";
+import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-brand-bg text-brand-text selection:bg-brand-primary selection:text-black">
       <Hero />
-      <Ticker />
+      <LogoBar />
       <Services />
       <Testimonials />
       <ClientTestimonials />
-      <FAQ />
       <LetsWorkTogether />
-      <Footer />
+      <FAQ />
     </main>
   );
 }
