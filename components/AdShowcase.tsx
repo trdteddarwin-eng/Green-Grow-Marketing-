@@ -442,6 +442,15 @@ function cardWidth(aspectRatio: AdCard["aspectRatio"], height: number): number {
   }
 }
 
+/** Returns CSS aspect-ratio value for a card (used on mobile for natural sizing). */
+function aspectRatioValue(ar: AdCard["aspectRatio"]): string {
+  switch (ar) {
+    case "9:16": return "9 / 16"
+    case "4:5": return "4 / 5"
+    case "1:1": return "1 / 1"
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Niche pill color helpers
 // ---------------------------------------------------------------------------
@@ -486,12 +495,16 @@ export function AdShowcase() {
 
   /** Total scrollable width of the track for the current filtered set. */
   const getTrackWidth = useCallback(() => {
+    if (isMobile) {
+      const mobileW = (containerRef.current?.offsetWidth ?? 320) * 0.9
+      return filteredCards.length * (mobileW + CARD_GAP)
+    }
     const h = getCardHeight()
     return filteredCards.reduce(
       (sum, card) => sum + cardWidth(card.aspectRatio, h) + CARD_GAP,
       0
     )
-  }, [filteredCards, getCardHeight])
+  }, [filteredCards, getCardHeight, isMobile])
 
   /** Width of the visible viewport. */
   const getContainerWidth = useCallback(() => {
@@ -673,7 +686,7 @@ export function AdShowcase() {
                   {/* Image area */}
                   <div
                     className="relative overflow-hidden"
-                    style={{ height: h }}
+                    style={isMobile ? { aspectRatio: aspectRatioValue(card.aspectRatio) } : { height: h }}
                   >
                     <img
                       src={card.image}
