@@ -1,20 +1,38 @@
 export const BRAND_CONFIG = {
-  name: "Green Grow Marketing",
+  name: "GreenGrow Digital",
   colors: {
-    primary: "#00FF94", // Green
+    primary: "#00FF94",
     accent: "#00CC75",
     background: "#050505",
     text: "#F2FCFF",
   },
   offer: {
-    headline: "We grow your business like grass.",
-    subheadline: "Launch high-converting, automated marketing systems that drive consistent sales while you focus on your brand.",
-    priceHook: "PRICE GOES UP IN:",
+    headline: "We Grow Brands That Get Noticed.",
+    subheadline: "High-converting paid ads and AI-powered automation that turn clicks into customers — so you can scale without the guesswork.",
   },
-  assets: {
-    vslVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
+  services: [
+    {
+      title: "Paid Ads That Actually Convert",
+      description: "We build and manage ad campaigns across Meta, Google, and TikTok that are engineered for ROI — not vanity metrics.",
+      benefits: [
+        "Full-funnel strategy from awareness to conversion",
+        "Creative testing & iteration every week",
+        "Transparent reporting with real numbers",
+        "Scale spend profitably, not blindly",
+      ],
+    },
+    {
+      title: "Automate Your Marketing Machine",
+      description: "From lead capture to follow-up sequences, we wire up AI-driven automations that nurture prospects while you sleep.",
+      benefits: [
+        "AI-powered lead scoring & segmentation",
+        "Automated email & SMS sequences",
+        "CRM integration & pipeline management",
+        "24/7 chatbot & response automation",
+      ],
+    },
+  ],
   copy: {
-    ticker: ["STEP BY STEP", "ZERO EXPERIENCE", "HIGH-TICKET CLIENTS", "FREEDOM"],
-  }
+    ticker: ["PAID ADS", "AI AUTOMATION", "SOCIAL GROWTH", "REAL RESULTS", "SCALE FAST", "DATA DRIVEN"],
+  },
 }
