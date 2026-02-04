@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BRAND_CONFIG } from "@/lib/brand";
 import { fadeUp, staggerContainer } from "@/lib/animations";
+import { AdShowcase } from "@/components/AdShowcase";
 
 interface ProcessStep {
   icon: React.ReactNode;
@@ -343,6 +344,9 @@ export function Services() {
             </motion.div>
           </AnimatePresence>
         </motion.div>
+
+        {/* Ad showcase — only visible when Ad Management is selected */}
+        {activeService === 0 && <AdShowcase />}
 
       </div>
     </section>
