@@ -13,6 +13,8 @@ interface AdCreative {
   metricLabel: string
   style: "ugc" | "product" | "social-proof"
   colorAccent: string
+  image?: string
+  imageCaption?: string
 }
 
 const adCreatives: AdCreative[] = [
@@ -26,6 +28,8 @@ const adCreatives: AdCreative[] = [
     metricLabel: "ROAS",
     style: "ugc",
     colorAccent: "#00FF94",
+    image: "/ads/More_Than_Just_a_Treat_version_1.png",
+    imageCaption: "This static ad generated $5K+ in revenue for a dog supplement brand.",
   },
   {
     platform: "TikTok — Spark Ad",
@@ -80,70 +84,89 @@ function PhoneMockup({ ad, isActive }: { ad: AdCreative; isActive: boolean }) {
         style={{
           borderColor: isActive ? ad.colorAccent : "rgba(255,255,255,0.1)",
           boxShadow: isActive ? `0 0 40px ${ad.colorAccent}20` : "none",
-          aspectRatio: isVertical ? "9/16" : "4/5",
-          maxHeight: isVertical ? "520px" : "450px",
+          aspectRatio: ad.image ? "9/16" : isVertical ? "9/16" : "4/5",
+          maxHeight: ad.image ? "600px" : isVertical ? "520px" : "450px",
         }}
       >
-        {/* Ad content */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black flex flex-col">
-          {/* Platform badge */}
-          <div className="flex items-center justify-between p-4">
-            <div className="flex items-center gap-2">
-              <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black"
-                style={{ backgroundColor: ad.colorAccent, color: "#000" }}
-              >
-                NB
+        {ad.image ? (
+          <>
+            <img
+              src={ad.image}
+              alt={`${ad.platform} ad`}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {ad.imageCaption && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-5 pb-5 pt-14">
+                <p className="text-white/90 text-sm font-semibold leading-snug">
+                  {ad.imageCaption}
+                </p>
               </div>
-              <div>
-                <p className="text-white text-xs font-semibold">Nano Banana</p>
-                <p className="text-white/40 text-[10px]">Sponsored</p>
+            )}
+          </>
+        ) : (
+          /* Text-based mockup fallback */
+          <>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black flex flex-col">
+              {/* Platform badge */}
+              <div className="flex items-center justify-between p-4">
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black"
+                    style={{ backgroundColor: ad.colorAccent, color: "#000" }}
+                  >
+                    NB
+                  </div>
+                  <div>
+                    <p className="text-white text-xs font-semibold">Nano Banana</p>
+                    <p className="text-white/40 text-[10px]">Sponsored</p>
+                  </div>
+                </div>
+                <span
+                  className="text-[10px] font-medium px-2 py-1 rounded-full border"
+                  style={{ borderColor: `${ad.colorAccent}40`, color: ad.colorAccent }}
+                >
+                  {ad.format}
+                </span>
+              </div>
+
+              {/* Hook */}
+              <div className="flex-1 flex flex-col justify-center px-5">
+                <p className="text-white text-xl md:text-2xl font-black leading-tight mb-4">
+                  {ad.hook}
+                </p>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  {ad.body}
+                </p>
+
+                {/* Metric badge */}
+                <div className="flex items-center gap-3 mb-6">
+                  <span
+                    className="text-3xl font-black"
+                    style={{ color: ad.colorAccent }}
+                  >
+                    {ad.metric}
+                  </span>
+                  <span className="text-white/40 text-xs font-semibold uppercase tracking-wider">
+                    {ad.metricLabel}
+                  </span>
+                </div>
+              </div>
+
+              {/* CTA button */}
+              <div className="p-4">
+                <div
+                  className="w-full py-3 rounded-lg text-center text-sm font-bold"
+                  style={{ backgroundColor: ad.colorAccent, color: "#000" }}
+                >
+                  {ad.cta}
+                </div>
               </div>
             </div>
-            <span
-              className="text-[10px] font-medium px-2 py-1 rounded-full border"
-              style={{ borderColor: `${ad.colorAccent}40`, color: ad.colorAccent }}
-            >
-              {ad.format}
-            </span>
-          </div>
 
-          {/* Hook */}
-          <div className="flex-1 flex flex-col justify-center px-5">
-            <p className="text-white text-xl md:text-2xl font-black leading-tight mb-4">
-              {ad.hook}
-            </p>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
-              {ad.body}
-            </p>
-
-            {/* Metric badge */}
-            <div className="flex items-center gap-3 mb-6">
-              <span
-                className="text-3xl font-black"
-                style={{ color: ad.colorAccent }}
-              >
-                {ad.metric}
-              </span>
-              <span className="text-white/40 text-xs font-semibold uppercase tracking-wider">
-                {ad.metricLabel}
-              </span>
-            </div>
-          </div>
-
-          {/* CTA button */}
-          <div className="p-4">
-            <div
-              className="w-full py-3 rounded-lg text-center text-sm font-bold"
-              style={{ backgroundColor: ad.colorAccent, color: "#000" }}
-            >
-              {ad.cta}
-            </div>
-          </div>
-        </div>
-
-        {/* Scanlines / noise overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay" />
+            {/* Scanlines / noise overlay */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay" />
+          </>
+        )}
       </div>
 
       {/* Platform label */}

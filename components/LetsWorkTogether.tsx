@@ -17,13 +17,20 @@ export function LetsWorkTogether() {
   const calInitialized = useRef(false)
   const calSectionRef = useRef<HTMLDivElement>(null)
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault()
+  const handleClick = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault()
     setIsClicked(true)
     setTimeout(() => {
       setShowSuccess(true)
     }, 500)
   }
+
+  // Listen for "open-calendar" event from Hero CTA
+  useEffect(() => {
+    const onOpenCalendar = () => handleClick()
+    window.addEventListener("open-calendar", onOpenCalendar)
+    return () => window.removeEventListener("open-calendar", onOpenCalendar)
+  }, [])
 
   // Scroll to the Cal.com embed once it appears
   useEffect(() => {

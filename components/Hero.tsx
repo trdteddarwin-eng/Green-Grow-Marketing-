@@ -78,7 +78,13 @@ export function Hero() {
                 {/* CTA Buttons */}
                 <motion.div className="flex flex-col sm:flex-row items-center gap-4 pt-8" variants={fadeUp}>
                     {/* Primary CTA */}
-                    <button className="group relative px-12 py-6 bg-gradient-to-br from-[#00FF94] to-[#00CC75] rounded-full overflow-hidden transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(0,255,148,0.5)]">
+                    <button
+                        onClick={() => {
+                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                            window.dispatchEvent(new CustomEvent("open-calendar"));
+                        }}
+                        className="group relative px-12 py-6 bg-gradient-to-br from-[#00FF94] to-[#00CC75] rounded-full overflow-hidden transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(0,255,148,0.5)]"
+                    >
                         <div className="absolute inset-0 bg-white/20 group-hover:opacity-0 transition-opacity" />
                         <span className="relative text-black font-black text-xl tracking-tight">
                             Get Your Free Audit
