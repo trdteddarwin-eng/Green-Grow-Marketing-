@@ -38,10 +38,10 @@ export function Hero() {
                         />
                     </div>
 
-                    <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                    <nav className="flex items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium text-white/80">
                         <a href="#services" className="hover:text-[#00FF94] transition-colors">Services</a>
                         <a href="#results" className="hover:text-[#00FF94] transition-colors">Results</a>
-                        <a href="#about" className="hover:text-[#00FF94] transition-colors">About</a>
+                        <a href="#about" className="hidden sm:block hover:text-[#00FF94] transition-colors">About</a>
                         <a href="#contact" className="hover:text-[#00FF94] transition-colors">Contact</a>
                     </nav>
                 </div>
