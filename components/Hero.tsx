@@ -29,12 +29,12 @@ export function Hero() {
                 whileInView="show"
                 viewport={{ once: true }}
             >
-                <div className="flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg shadow-brand-primary/10">
+                <div className="flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 sm:px-6 sm:py-3 shadow-lg shadow-brand-primary/10">
                     <div className="flex items-center">
                         <img
                             src="/logo-transparent.png"
                             alt="GreenGrow Digital"
-                            className="h-16 w-auto object-contain transform scale-110"
+                            className="h-10 sm:h-14 md:h-16 w-auto object-contain transform scale-110"
                         />
                     </div>
 
@@ -58,7 +58,7 @@ export function Hero() {
 
                 {/* Headline */}
                 <motion.h1
-                    className="text-5xl md:text-7xl lg:text-9xl font-black leading-[0.9] tracking-tight text-white uppercase max-w-6xl drop-shadow-xl"
+                    className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl font-black leading-[0.9] tracking-tight text-white uppercase max-w-6xl drop-shadow-xl"
                     variants={fadeUp}
                 >
                     We Grow Brands <br />
@@ -83,10 +83,10 @@ export function Hero() {
                             document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                             window.dispatchEvent(new CustomEvent("open-calendar"));
                         }}
-                        className="group relative px-12 py-6 bg-gradient-to-br from-[#00FF94] to-[#00CC75] rounded-full overflow-hidden transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(0,255,148,0.5)]"
+                        className="group relative px-8 py-4 sm:px-12 sm:py-6 bg-gradient-to-br from-[#00FF94] to-[#00CC75] rounded-full overflow-hidden transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(0,255,148,0.5)]"
                     >
                         <div className="absolute inset-0 bg-white/20 group-hover:opacity-0 transition-opacity" />
-                        <span className="relative text-black font-black text-xl tracking-tight">
+                        <span className="relative text-black font-black text-base sm:text-xl tracking-tight">
                             Get Your Free Audit
                         </span>
                     </button>
@@ -94,9 +94,9 @@ export function Hero() {
                     {/* Ghost / Outline CTA */}
                     <a
                         href="#results"
-                        className="group px-12 py-6 rounded-full border-2 border-white/20 hover:border-[#00FF94]/60 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm"
+                        className="group px-8 py-4 sm:px-12 sm:py-6 rounded-full border-2 border-white/20 hover:border-[#00FF94]/60 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm"
                     >
-                        <span className="text-white/90 group-hover:text-[#00FF94] font-bold text-xl tracking-tight transition-colors">
+                        <span className="text-white/90 group-hover:text-[#00FF94] font-bold text-base sm:text-xl tracking-tight transition-colors">
                             See Our Results
                         </span>
                     </a>

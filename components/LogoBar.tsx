@@ -21,8 +21,8 @@ const logos = [
 
 function LogoItem({ name }: { name: string }) {
   return (
-    <div className="flex items-center justify-center px-8 md:px-12">
-      <span className="text-white/25 hover:text-white/50 transition-all duration-500 text-xl md:text-2xl font-bold tracking-widest uppercase whitespace-nowrap select-none">
+    <div className="flex items-center justify-center px-5 sm:px-8 md:px-12">
+      <span className="text-white/25 hover:text-white/50 transition-all duration-500 text-base sm:text-xl md:text-2xl font-bold tracking-widest uppercase whitespace-nowrap select-none">
         {name}
       </span>
     </div>
@@ -46,8 +46,8 @@ export function LogoBar() {
 
       <div className="relative">
         {/* Gradient masks on edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-brand-bg to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-brand-bg to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling logos */}
         <motion.div

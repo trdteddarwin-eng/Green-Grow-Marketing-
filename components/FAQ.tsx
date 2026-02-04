@@ -132,7 +132,7 @@ export function FAQ() {
   const filtered = activeCategory === "All" ? faqs : faqs.filter((f) => f.category === activeCategory)
 
   return (
-    <section className="py-24 px-4 bg-brand-bg">
+    <section className="py-16 px-4 sm:py-24 bg-brand-bg">
       <div className="max-w-3xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -142,7 +142,7 @@ export function FAQ() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight">
             Got{" "}
             <span className="bg-gradient-to-r from-[#00FF94] to-[#009E5A] bg-clip-text text-transparent">
               Questions?
@@ -168,7 +168,7 @@ export function FAQ() {
                 setActiveCategory(cat)
                 setOpenIndex(null)
               }}
-              className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer"
               style={{
                 backgroundColor: activeCategory === cat ? "#00FF94" : "rgba(255,255,255,0.05)",
                 color: activeCategory === cat ? "#050505" : "rgba(255,255,255,0.6)",

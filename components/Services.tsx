@@ -165,7 +165,7 @@ function ProcessBreakdown({ steps }: { steps: ProcessStep[] }) {
           <button
             key={i}
             onClick={() => setActiveStep(i)}
-            className="flex-shrink-0 flex flex-col items-center gap-3 p-4 rounded-xl border transition-all duration-300 cursor-pointer min-w-[120px]"
+            className="flex-shrink-0 flex flex-col items-center gap-3 p-3 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer min-w-[100px] sm:min-w-[120px]"
             style={{
               borderColor: activeStep === i ? "#00FF94" : "rgba(255,255,255,0.1)",
               backgroundColor: activeStep === i ? "rgba(0,255,148,0.08)" : "rgba(255,255,255,0.03)",
@@ -272,7 +272,7 @@ export function Services() {
               <button
                 key={i}
                 onClick={() => setActiveService(i)}
-                className="relative px-6 md:px-8 py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 cursor-pointer"
+                className="relative px-4 py-2 sm:px-6 sm:py-3 md:px-8 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 cursor-pointer"
                 style={{
                   backgroundColor: activeService === i ? "#00FF94" : "transparent",
                   color: activeService === i ? "#050505" : "rgba(255,255,255,0.6)",

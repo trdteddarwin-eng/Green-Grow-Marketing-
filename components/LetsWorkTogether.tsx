@@ -159,7 +159,7 @@ export function LetsWorkTogether() {
           >
             <div className="flex flex-col items-center gap-6">
               <h2
-                className="relative text-center text-5xl font-light tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="relative text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 style={{
                   opacity: isClicked ? 0 : 1,
                   transform: isClicked ? "translateY(-40px) scale(0.95)" : "translateY(0) scale(1)",
@@ -215,7 +215,7 @@ export function LetsWorkTogether() {
             </div>
 
             {/* Side lines */}
-            <div className="absolute -left-8 top-1/2 -translate-y-1/2 sm:-left-16">
+            <div className="hidden sm:block absolute -left-8 top-1/2 -translate-y-1/2 sm:-left-16">
               <div
                 className="h-px w-8 sm:w-12 transition-all duration-500"
                 style={{
@@ -225,7 +225,7 @@ export function LetsWorkTogether() {
                 }}
               />
             </div>
-            <div className="absolute -right-8 top-1/2 -translate-y-1/2 sm:-right-16">
+            <div className="hidden sm:block absolute -right-8 top-1/2 -translate-y-1/2 sm:-right-16">
               <div
                 className="h-px w-8 sm:w-12 transition-all duration-500"
                 style={{
@@ -278,10 +278,9 @@ export function LetsWorkTogether() {
           </div>
 
           <div
-            className="w-full overflow-auto rounded-2xl border border-white/10"
-            style={{ minHeight: "500px" }}
+            className="w-full overflow-auto rounded-2xl border border-white/10 min-h-[300px] sm:min-h-[500px]"
           >
-            <div id="my-cal-inline-15min" style={{ width: "100%", height: "100%", minHeight: "500px" }} />
+            <div id="my-cal-inline-15min" className="min-h-[300px] sm:min-h-[500px]" style={{ width: "100%", height: "100%" }} />
           </div>
         </div>
       </div>

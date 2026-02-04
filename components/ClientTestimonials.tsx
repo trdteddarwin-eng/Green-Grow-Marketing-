@@ -156,7 +156,7 @@ export function ClientTestimonials() {
 
           <h2
             id="client-testimonials-heading"
-            className="text-4xl md:text-5xl font-black tracking-tight mt-6 text-center text-white uppercase"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mt-6 text-center text-white uppercase"
           >
             What Our{" "}
             <span className="bg-gradient-to-r from-[#00FF94] to-[#009E5A] bg-clip-text text-transparent">
@@ -170,7 +170,7 @@ export function ClientTestimonials() {
         </div>
 
         <div
-          className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden"
+          className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[500px] sm:max-h-[740px] overflow-hidden"
           role="region"
           aria-label="Scrolling client testimonials"
         >

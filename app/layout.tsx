@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 import { BRAND_CONFIG } from "@/lib/brand";
@@ -18,6 +18,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: BRAND_CONFIG.name,
   description: BRAND_CONFIG.offer.subheadline,
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
