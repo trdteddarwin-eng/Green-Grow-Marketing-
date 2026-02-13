@@ -1,5 +1,4 @@
 import { Hero } from "@/components/Hero";
-import { LogoBar } from "@/components/LogoBar";
 import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
 import { ClientTestimonials } from "@/components/ClientTestimonials";
@@ -12,7 +11,6 @@ export default function Home() {
     <main className="min-h-screen bg-brand-bg text-brand-text selection:bg-brand-primary selection:text-black">
       <StickyContact />
       <Hero />
-      <LogoBar />
       <Services />
       <Testimonials />
       <ClientTestimonials />
